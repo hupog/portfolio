@@ -1,0 +1,35 @@
+---
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 w-full bg-neutral-900 bg-opacity-80 text-white backdrop-blur-md shadow-md z-50 transition-transform duration-300"
+>
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="#hero" class="text-lg font-bold">hupog.dev</a>
+    <ul class="flex space-x-6 text-sm">
+      <li><a href="#hero" class="hover:underline">Inicio</a></li>
+      <li><a href="#projects" class="hover:underline">Proyectos</a></li>
+      <li><a href="#contact" class="hover:underline">Contacto</a></li>
+    </ul>
+  </div>
+
+  <script>
+    let lastScroll = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (navbar) {
+        if (currentScroll > lastScroll && currentScroll > 50) {
+          navbar.style.transform = 'translateY(-100%)'; // Oculta
+        } else {
+          navbar.style.transform = 'translateY(0)'; // Muestra
+        }
+      }
+
+      lastScroll = currentScroll;
+    });
+  </script>
+</nav>

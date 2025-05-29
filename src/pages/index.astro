@@ -1,18 +1,22 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-3xl font-bold">
-			Hupog's Portfolio!!
-		</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hugo González Portilla – Portfolio</title>
+  </head>
+  <body class="bg-neutral-950 text-white">
+    <Navbar />
+    <main>
+      <section id="hero"><Hero /></section>
+      <section id="projects"><Projects /></section>
+      <section id="contact"><Contact /></section>
+    </main>
+  </body>
 </html>

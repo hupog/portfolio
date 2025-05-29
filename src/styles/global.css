@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* Puedes añadir estilos globales aquí */
+body {
+  @apply bg-neutral-950 text-white font-sans;
+}
+
+html {
+  scroll-behavior: smooth;
+}
