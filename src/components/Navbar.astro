@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <nav
@@ -16,16 +17,16 @@
 
   <script>
     let lastScroll = 0;
-    const navbar = document.getElementById('navbar');
+    const navbar = document.getElementById("navbar");
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
 
       if (navbar) {
         if (currentScroll > lastScroll && currentScroll > 50) {
-          navbar.style.transform = 'translateY(-100%)'; // Oculta
+          navbar.style.transform = "translateY(-100%)"; // Oculta
         } else {
-          navbar.style.transform = 'translateY(0)'; // Muestra
+          navbar.style.transform = "translateY(0)"; // Muestra
         }
       }
 

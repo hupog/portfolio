@@ -6,5 +6,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["@motionone/dom"],
+    },
+    resolve: {
+      dedupe: ["@motionone/dom"],
+    },
   },
 });

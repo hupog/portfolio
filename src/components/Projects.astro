@@ -1,28 +1,34 @@
 ---
+
 ---
 
-<section id="projects" class="min-h-screen px-6 py-20 bg-neutral-900 text-white">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold mb-6 text-center">Proyectos</h2>
-      <p class="text-gray-400 text-center mb-12 max-w-xl mx-auto">
-        Algunos de los proyectos en los que he trabajado. Más por venir...
-      </p>
-  
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="https://restvisor-front.onrender.com/" target="_blank" class="project-card">
-          <div class="bg-neutral-800 p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-transform duration-300 h-full">
-            <h3 class="text-center text-xl font-semibold mb-2">Restvisor</h3>
-            <p class="text-justify text-white-400 text-sm">Aplicación Web basada en React pensada para la gestión integral de un restaurante, con comunicación entre las distintas partes de este y con una interfaz sencilla y reutilizable.</p>
-          </div>
-        </a>
-      </div>
+<section
+  id="projects"
+  class="min-h-screen px-6 py-20 bg-neutral-900 text-white"
+>
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-6 text-center">Proyectos</h2>
+    <p class="text-gray-400 text-center mb-12 max-w-xl mx-auto">
+      Algunos de los proyectos en los que he trabajado. Más por venir...
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a
+        href="https://restvisor-front.onrender.com/"
+        target="_blank"
+        class="project-card"
+      >
+        <div
+          class="bg-neutral-800 p-6 rounded-2xl shadow-lg hover:scale-[1.02] transition-transform duration-300 h-full"
+        >
+          <h3 class="text-center text-xl font-semibold mb-2">Restvisor</h3>
+          <p class="text-justify text-white-400 text-sm">
+            Aplicación Web basada en React pensada para la gestión integral de
+            un restaurante, con comunicación entre las distintas partes de este
+            y con una interfaz sencilla y reutilizable.
+          </p>
+        </div>
+      </a>
     </div>
-  
-    <script type="module">
-      import { animate, inView } from 'motion';
-  
-      inView(".project-card", (el) => {
-        animate(el, { opacity: [0, 1], y: [30, 0] }, { duration: 0.8, delay: el.dataset.index * 0.1 || 0 });
-      }, { margin: "-20% 0px" });
-    </script>
-  </section>
+  </div>
+</section>
