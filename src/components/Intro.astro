@@ -3,29 +3,50 @@
 ---
 
 <section
-  id="intro"
-  class="h-screen flex flex-col justify-center items-center text-center px-4 bg-neutral-950 text-white"
+  id="hero"
+  class="relative min-h-screen flex items-center justify-center text-white overflow-hidden"
 >
-  <h1 class="text-5xl md:text-6xl font-bold">
-    Hola, soy Hugo González Portilla
-  </h1>
-  <p class="text-lg text-gray-400 mt-4 max-w-xl">
-    Recién Graduado en Ingeniería Informática, preparado para dar el salto al
-    mundo profesional. Busco nuevos retos que me permitan seguir aprendiendo,
-    crecer en nuevos entornos y aportar desde el primer día.
-  </p>
+  <div
+    class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-br from-blue-700 via-purple-800 to-black opacity-70"
+  >
+  </div>
+
+  <div class="z-10 text-center">
+    <h1 class="text-5xl font-bold mb-4">Hola, soy Hugo González Portilla</h1>
+    <p class="text-xl max-w-xl mx-auto">
+      Recién Graduado en Ingeniería Informática, preparado para dar el salto al
+      mundo profesional. Busco nuevos retos que me permitan seguir aprendiendo,
+      crecer en nuevos entornos y aportar desde el primer día.
+    </p>
+  </div>
+
+  <script>
+    const { animate, inView } = await import("@motionone/dom");
+
+    inView("#intro", () => {
+      animate("#intro h1", { opacity: [0, 1], y: [-50, 0] }, { duration: 1 });
+      animate(
+        "#intro p",
+        { opacity: [0, 1], y: [30, 0] },
+        { delay: 0.5, duration: 1 }
+      );
+    });
+  </script>
+  <style>
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradientMove 15s ease infinite;
+    }
+  </style>
 </section>
-
-<script>
-  // @ts-ignore
-  const { animate, inView } = await import("@motionone/dom");
-
-  inView("#intro", () => {
-    animate("#intro h1", { opacity: [0, 1], y: [-50, 0] }, { duration: 1 });
-    animate(
-      "#intro p",
-      { opacity: [0, 1], y: [30, 0] },
-      { delay: 0.5, duration: 1 }
-    );
-  });
-</script>
