@@ -1,24 +1,24 @@
 ---
-
+const { t } = Astro.props;
 ---
 
 <section id="contact" class="min-h-screen px-6 py-20">
   <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-4">Contacto</h2>
+    <h2 class="text-4xl font-bold mb-4">{t.contact.title}</h2>
     <p class="text-gray-400 mb-10">
-      ¿Quieres colaborar? Completa el formulario o escríbeme directamente.
+      {t.contact.description}
     </p>
 
     <div class="mb-10 space-y-2">
       <p>
-        <strong>Email:</strong>
+        <strong>{t.contact.emailLabel}</strong>
         <a
           href="mailto:contacto@hupog.dev"
           class="text-blue-400 hover:underline">contacto@hupog.dev</a
         >
       </p>
       <p>
-        <strong>GitHub:</strong>
+        <strong>{t.contact.githubLabel}</strong>
         <a
           href="https://github.com/hupog"
           class="text-blue-400 hover:underline"
@@ -26,7 +26,7 @@
         >
       </p>
       <p>
-        <strong>LinkedIn:</strong>
+        <strong>{t.contact.linkedinLabel}</strong>
         <a
           href="https://www.linkedin.com/in/hugo-gonz%C3%A1lez-portilla"
           class="text-blue-400 hover:underline"
@@ -41,7 +41,7 @@
       class="p-6 rounded-2xl bg-neutral-900/40 backdrop-blur shadow-lg text-left max-w-xl mx-auto space-y-4"
     >
       <div>
-        <label for="name" class="block text-sm font-medium">Nombre</label>
+        <label for="name" class="block text-sm font-medium">{t.contact.nameLabel}</label>
         <input
           type="text"
           name="name"
@@ -51,7 +51,7 @@
       </div>
 
       <div>
-        <label for="email" class="block text-sm font-medium">Correo</label>
+        <label for="email" class="block text-sm font-medium">{t.contact.emailField}</label>
         <input
           type="email"
           name="email"
@@ -61,7 +61,7 @@
       </div>
 
       <div>
-        <label for="message" class="block text-sm font-medium">Mensaje</label>
+        <label for="message" class="block text-sm font-medium">{t.contact.messageLabel}</label>
         <textarea
           name="message"
           required
@@ -75,7 +75,7 @@
           type="submit"
           class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow transition-colors"
         >
-          Enviar
+          {t.contact.submit}
         </button>
       </div>
     </form>

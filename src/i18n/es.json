@@ -1,0 +1,39 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "intro": {
+    "title": "Hola, soy Hugo González Portilla",
+    "description": "Recién Graduado en Ingeniería Informática, preparado para dar el salto al mundo profesional. Busco nuevos retos que me permitan seguir aprendiendo, crecer en nuevos entornos y aportar desde el primer día."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Algunos de los proyectos en los que he trabajado. Más por venir...",
+    "restvisor": {
+      "name": "Restvisor",
+      "description": "Aplicación Web basada en React pensada para la gestión integral de un restaurante, con comunicación entre las distintas partes de este y con una interfaz sencilla y reutilizable."
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "nunegal": {
+      "company": "Nunegal Consulting",
+      "location": "Remoto · A Coruña · Jun 2024 – Dic 2024",
+      "description": "Durante mis prácticas en Nunegal Consulting formé parte de un equipo de desarrollo web, donde trabajé con tecnologías como Java, Spring Boot y Thymeleaf para construir aplicaciones empresariales. Esta experiencia me permitió familiarizarme con el trabajo en entornos ágiles, control de versiones con Git y el desarrollo de soluciones orientadas a cliente."
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Quieres colaborar? Completa el formulario o escríbeme directamente.",
+    "emailLabel": "Email:",
+    "githubLabel": "GitHub:",
+    "linkedinLabel": "LinkedIn:",
+    "nameLabel": "Nombre",
+    "emailField": "Correo",
+    "messageLabel": "Mensaje",
+    "submit": "Enviar"
+  }
+}
