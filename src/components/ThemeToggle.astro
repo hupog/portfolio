@@ -1,0 +1,23 @@
+---
+---
+<button id="theme-toggle" class="p-2 rounded-md border border-neutral-600">
+  <span class="sr-only">Toggle dark mode</span>
+  🌓
+</button>
+<script>
+const html = document.documentElement;
+const stored = localStorage.getItem('theme');
+if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  html.classList.add('dark');
+}
+const btn = document.getElementById('theme-toggle');
+btn?.addEventListener('click', () => {
+  if (html.classList.contains('dark')) {
+    html.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
+</script>

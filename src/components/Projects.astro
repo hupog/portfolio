@@ -1,5 +1,10 @@
 ---
+
 const { t } = Astro.props;
+=======
+import projects from "../data/projects.json";
+import Modal from "./Modal.astro";
+
 ---
 
 <section id="projects" class="px-6 py-20">
@@ -7,28 +12,30 @@ const { t } = Astro.props;
     <h2 class="text-4xl font-bold mb-6 text-center">{t.projects.title}</h2>
     <p class="text-gray-400 text-center mb-12 max-w-xl mx-auto">{t.projects.description}</p>
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"
-    >
-      <a
-        href="https://restvisor-front.onrender.com/"
-        target="_blank"
-        class="project-card md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3"
-      >
-        <div
-          class="bg-neutral-900/40 backdrop-blur p-6 rounded-2xl shadow-lg hover:scale-[1.02] hover:bg-neutral-900/60 transition-transform duration-300 h-full"
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+      {projects.map((p) => (
+        <button
+          type="button"
+          class="project-card md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3"
+          aria-haspopup="dialog"
+          onclick={`openProjectModal('${p.id}')`}
         >
-          <div class="flex justify-center mb-4">
-            <img
-              src="/restvisor-logo.png"
-              alt="Logo Restvisor"
-              class="w-24 h-24 object-contain"
-            />
+          <div class="bg-neutral-900/40 backdrop-blur p-6 rounded-2xl shadow-lg hover:scale-[1.02] hover:bg-neutral-900/60 transition-transform duration-300 h-full">
+            <div class="flex justify-center mb-4">
+              <img src={p.image} alt={`Logo ${p.title}`} class="w-24 h-24 object-contain" />
+            </div>
+            <h3 class="text-center text-xl font-semibold mb-2">{p.title}</h3>
+            <p class="text-justify text-white-400 text-sm">{p.excerpt}</p>
           </div>
+
           <h3 class="text-center text-xl font-semibold mb-2">{t.projects.restvisor.name}</h3>
           <p class="text-justify text-white-400 text-sm">{t.projects.restvisor.description}</p>
         </div>
       </a>
+
+        </button>
+      ))}
     </div>
   </div>
+  <Modal />
 </section>
