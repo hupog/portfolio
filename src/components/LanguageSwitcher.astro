@@ -1,0 +1,19 @@
+---
+const { lang } = Astro.props;
+---
+
+<select id="lang-select" class="bg-neutral-900 text-white border border-neutral-700 p-1 rounded" value={lang}>
+  <option value="es" selected={lang === 'es'}>ES</option>
+  <option value="en" selected={lang === 'en'}>EN</option>
+</select>
+
+<script>
+  const select = document.getElementById('lang-select');
+  select.addEventListener('change', (e) => {
+    const newLang = e.target.value;
+    localStorage.setItem('lang', newLang);
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', newLang);
+    window.location.href = url;
+  });
+</script>

@@ -5,9 +5,15 @@ import Intro from "../components/Intro.astro";
 import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
 import Experience from "../components/Experience.astro";
+import es from "../i18n/es.json";
+import en from "../i18n/en.json";
+
+const urlLang = Astro.url.searchParams.get('lang');
+let lang = urlLang || 'es';
+const t = lang === 'en' ? en : es;
 ---
 
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <title>.dev</title>
@@ -16,12 +22,22 @@ import Experience from "../components/Experience.astro";
   <body
     class="animate-gradient bg-gradient-to-br from-blue-700 via-green-800 to-black"
   >
-    <Navbar />
+    <Navbar t={t} lang={lang} />
     <main>
-      <section id="intro"><Intro /></section>
-      <section id="projects"><Projects /></section>
-      <section id="experience"><Experience /></section>
-      <section id="contact"><Contact /></section>
+      <section id="intro"><Intro t={t} /></section>
+      <section id="projects"><Projects t={t} /></section>
+      <section id="experience"><Experience t={t} /></section>
+      <section id="contact"><Contact t={t} /></section>
+    <script>
+      const stored = localStorage.getItem("lang");
+      if(stored && !window.location.search.includes("lang=")){
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", stored);
+        window.location.replace(url);
+      } else if(!stored){
+        localStorage.setItem("lang", lang);
+      }
+    </script>
     </main>
   </body>
 </html>

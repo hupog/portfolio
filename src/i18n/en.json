@@ -1,0 +1,39 @@
+{
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "intro": {
+    "title": "Hi, I'm Hugo González Portilla",
+    "description": "Recent Computer Engineering graduate ready to jump into the professional world. I'm looking for new challenges that will allow me to keep learning, grow in new environments and contribute from day one."
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Some of the projects I've worked on. More coming soon...",
+    "restvisor": {
+      "name": "Restvisor",
+      "description": "React-based web application designed for comprehensive restaurant management, enabling communication between the different areas and providing a simple, reusable interface."
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "nunegal": {
+      "company": "Nunegal Consulting",
+      "location": "Remote · A Coruña · Jun 2024 – Dec 2024",
+      "description": "During my internship at Nunegal Consulting I was part of a web development team working with technologies such as Java, Spring Boot and Thymeleaf to build enterprise applications. This experience allowed me to become familiar with agile environments, version control with Git and customer-oriented solution development."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Want to collaborate? Fill out the form or reach out to me directly.",
+    "emailLabel": "Email:",
+    "githubLabel": "GitHub:",
+    "linkedinLabel": "LinkedIn:",
+    "nameLabel": "Name",
+    "emailField": "Email",
+    "messageLabel": "Message",
+    "submit": "Send"
+  }
+}

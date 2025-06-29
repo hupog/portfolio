@@ -1,33 +1,28 @@
+---
+const { t } = Astro.props;
+---
 <section class="px-6 py-20" id="experience">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold mb-8 text-center">Experiencia</h2>
+    <h2 class="text-4xl font-bold mb-8 text-center">{t.experience.title}</h2>
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center"
     >
       <div
         class="bg-neutral-900/40 backdrop-blur p-6 rounded-2xl shadow-md text-left hover:scale-[1.02] hover:bg-neutral-900/60 transition-all duration-300 hover:shadow-lg md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3"
       >
-      <div class="flex items-center gap-4 mb-4">
-        <img
-          src="/logo-nune.png"
-          alt="Logo Nunegal Consulting"
-          class="w-24 h-24 object-contain"
-        />
-        <div>
-          <h3 class="text-xl font-bold">Nunegal Consulting</h3>
-          <p class="text-sm text-gray-400">
-            Remoto · A Coruña · Jun 2024 – Dic 2024
-          </p>
+        <div class="flex items-center gap-4 mb-4">
+          <img
+            src="/logo-nune.png"
+            alt="Logo Nunegal Consulting"
+            class="w-24 h-24 object-contain"
+          />
+          <div>
+            <h3 class="text-xl font-bold">{t.experience.nunegal.company}</h3>
+            <p class="text-sm text-gray-400">{t.experience.nunegal.location}</p>
+          </div>
         </div>
+        <p class="text-justify">{t.experience.nunegal.description}</p>
       </div>
-      <p class="text-justify">
-        Durante mis prácticas en Nunegal Consulting formé parte de un equipo de
-        desarrollo web, donde trabajé con tecnologías como <strong
-          >Java, Spring Boot y Thymeleaf</strong
-        > para construir aplicaciones empresariales. Esta experiencia me permitió
-        familiarizarme con el trabajo en entornos ágiles, control de versiones con
-        Git y el desarrollo de soluciones orientadas a cliente.
-      </p>
     </div>
   </div>
 </section>
