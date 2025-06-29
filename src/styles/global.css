@@ -2,7 +2,11 @@
 
 /* Puedes añadir estilos globales aquí */
 body {
-  @apply bg-neutral-950 text-white font-sans;
+  @apply bg-white text-neutral-900 font-sans;
+}
+
+.dark body {
+  @apply bg-neutral-950 text-white;
 }
 
 ::selection {

@@ -5,12 +5,16 @@ import Intro from "../components/Intro.astro";
 import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
 import Experience from "../components/Experience.astro";
+
 import es from "../i18n/es.json";
 import en from "../i18n/en.json";
 
 const urlLang = Astro.url.searchParams.get('lang');
 let lang = urlLang || 'es';
 const t = lang === 'en' ? en : es;
+=======
+import ScrollToTop from "../components/ScrollToTop.astro";
+
 ---
 
 <html lang={lang}>
@@ -39,5 +43,6 @@ const t = lang === 'en' ? en : es;
       }
     </script>
     </main>
+    <ScrollToTop />
   </body>
 </html>
