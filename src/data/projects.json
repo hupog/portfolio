@@ -1,0 +1,34 @@
+[
+  {
+    "id": "restvisor",
+    "title": "Restvisor",
+    "image": "/restvisor-logo.png",
+    "excerpt": "Aplicación Web basada en React para la gestión integral de un restaurante.",
+    "description": "Restvisor permite conectar las distintas áreas de un restaurante facilitando reservas, pedidos y administración desde una interfaz intuitiva.",
+    "links": {
+      "demo": "https://restvisor-front.onrender.com/",
+      "repo": "https://github.com/hupog/restvisor"
+    }
+  },
+  {
+    "id": "portfolio",
+    "title": "Portafolio",
+    "image": "/logo-head.png",
+    "excerpt": "Sitio web personal construido con Astro y Tailwind.",
+    "description": "Este portafolio muestra mi experiencia y proyectos, empleando Astro para un rendimiento óptimo y Motion One para las animaciones.",
+    "links": {
+      "demo": "https://hupog.dev",
+      "repo": "https://github.com/hupog/portfolio"
+    }
+  },
+  {
+    "id": "consulting",
+    "title": "Consulting Tool",
+    "image": "/logo-nune.png",
+    "excerpt": "Herramienta interna desarrollada durante mis prácticas en Nunegal Consulting.",
+    "description": "Proyecto realizado con Java y Spring Boot para la gestión de procesos empresariales, permitiendo un flujo de trabajo más eficiente.",
+    "links": {
+      "repo": "#"
+    }
+  }
+]
