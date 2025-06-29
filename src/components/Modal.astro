@@ -1,0 +1,78 @@
+---
+import projects from '../data/projects.json';
+---
+
+<div
+  id="modal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+>
+  <div class="bg-neutral-900 p-6 rounded-xl w-11/12 md:w-2/3 lg:w-1/2 max-h-full overflow-y-auto">
+    <button id="close-modal" class="ml-auto mb-4 text-xl" aria-label="Cerrar modal">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script type="module">
+  const projects = ${JSON.stringify(projects)};
+  const modal = document.getElementById('modal');
+  const closeBtn = document.getElementById('close-modal');
+  const modalContent = document.getElementById('modal-content');
+  let lastFocused;
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    } else if (e.key === 'Tab') {
+      trapFocus(e);
+    }
+  }
+
+  function trapFocus(e) {
+    const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.removeEventListener('keydown', onKeyDown);
+    if (lastFocused) lastFocused.focus();
+    document.body.style.overflow = '';
+  }
+
+  function openModal(id) {
+    const project = projects.find(p => p.id === id);
+    if (!project) return;
+    modalContent.innerHTML = `
+      <h2 id="modal-title" class="text-2xl font-bold mb-4 text-center">${project.title}</h2>
+      <img src="${project.image}" alt="${project.title}" class="w-32 h-32 object-contain mx-auto mb-4" />
+      <p class="text-justify mb-4">${project.description}</p>
+      <div class="flex gap-4 justify-center">
+        ${project.links.demo ? `<a href="${project.links.demo}" target="_blank" class="bg-blue-700 px-4 py-2 rounded">Demo</a>` : ''}
+        ${project.links.repo ? `<a href="${project.links.repo}" target="_blank" class="bg-blue-700 px-4 py-2 rounded">Repo</a>` : ''}
+      </div>
+    `;
+    lastFocused = document.activeElement;
+    modal.classList.remove('hidden');
+    document.addEventListener('keydown', onKeyDown);
+    closeBtn.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  window.openProjectModal = openModal;
+</script>
