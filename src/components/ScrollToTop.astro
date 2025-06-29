@@ -1,0 +1,29 @@
+---
+---
+<button id="scroll-to-top" class="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600 text-white shadow-lg transition-opacity opacity-0 pointer-events-none">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+    <path d="M5 12l7-7 7 7" />
+    <path d="M12 5v14" />
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById("scroll-to-top");
+
+  function toggle() {
+    if (!btn) return;
+    if (window.scrollY > 200) {
+      btn.classList.remove("opacity-0", "pointer-events-none");
+      btn.classList.add("opacity-100");
+    } else {
+      btn.classList.add("opacity-0", "pointer-events-none");
+      btn.classList.remove("opacity-100");
+    }
+  }
+
+  window.addEventListener("scroll", toggle);
+
+  btn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
